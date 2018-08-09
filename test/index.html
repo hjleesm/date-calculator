@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>TEST date-calculator</title>
+    <link rel="stylesheet" href="qunit-2.6.1.css">
+    <script src="../dist/date-calculator.js"></script>
+    <script src="qunit-2.6.1.js"></script>
+</head>
+<body>
+    <script>
+        var DEFAULT_TEST_SET = [
+            {
+                op1: [2018, 7, 9],  // 2018/8/9
+                op2: [2018, 7, 6],  // 2018/8/6
+                expect: {
+                    days: 3,
+                    weeks: 0,
+                    months: 0,
+                    years: 0                    
+                }
+            },
+            {
+                op1: [2018, 7, 16], // 2018/8/9
+                op2: [2018, 7, 2],  // 2018/8/2
+                expect: {
+                    days: 14,
+                    weeks: 2,
+                    months: 0,
+                    years: 0                    
+                }
+            },
+            {
+                op1: [2018, 7, 16],  // 2018/8/9
+                op2: [2018, 6, 26],  // 2018/7/26
+                expect: {
+                    days: 14,
+                    weeks: 2,
+                    months: 1,
+                    years: 0                    
+                }
+            },
+            {
+                op1: [2018, 0, 22],     // 2018/1/22
+                op2: [2017, 11, 25],    // 2017/12/25
+                expect: {
+                    days: 28,
+                    weeks: 4,
+                    months: 1,
+                    years: 1                    
+                }
+            },
+            {
+                op1: [2017, 11, 25],   // 2017/12/25
+                op2: [2018, 0, 22],    // 2018/1/22
+                expect: {
+                    days: -28,
+                    weeks: -4,
+                    months: -1,
+                    years: -1                    
+                }
+            }
+        ];
+
+        QUnit.test("DateCalculator.sub()", function(assert) {
+            for(var i = 0; i < DEFAULT_TEST_SET.length; i++) {
+                var testSet = DEFAULT_TEST_SET[i],
+                    dc = new DateCalculator(new Date(testSet.op1[0], testSet.op1[1], testSet.op1[2])),
+                    ret = dc.sub(new Date(testSet.op2[0], testSet.op2[1], testSet.op2[2]));
+
+                assert.equal(JSON.stringify(testSet.expect), JSON.stringify(testSet.expect), 
+                    testSet.op1[0] + '/' + (testSet.op1[1] + 1) + '/' + testSet.op1[2] + ' - ' + testSet.op2[0] + '/' + (testSet.op2[1] + 1) + '/' + testSet.op2[2] + ' = ' + JSON.stringify(testSet.expect));
+            }
+        });
+    </script>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+</body>
+</html>
