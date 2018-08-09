@@ -14,3 +14,5 @@
 # System Files
 .DS_Store
 Thumbs.db
+
+./pakage-lock.json
