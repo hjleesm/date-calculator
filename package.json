@@ -1,6 +1,14 @@
 {
   "name": "date-calculator",
-  "version": "1.0.1",
+  "version": "1.0.2",
+  "keywords": [
+    "DateCalculator",
+    "Date Calculator",
+    "Date",
+    "JavaScript Date",
+    "date-calculator",
+    "Calculator"
+  ],
   "description": "calculate Date objects.",
   "main": "date-calculator.js",
   "directories": {
