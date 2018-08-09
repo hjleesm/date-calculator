@@ -1,4 +1,4 @@
-var DateCalculator = (function() {
+(function() {
     var DIVISORS = {
         days: 1000 * 60 * 60 * 24
     };
@@ -56,5 +56,13 @@ var DateCalculator = (function() {
         }
     };
 
-    return Constructor;
+    if (typeof define == 'function' && define.amd) {
+        define(function(){
+            return Constructor;
+        });
+    } else if (typeof module !== 'undefined') {
+        module.exports = Constructor;
+    } else {
+        window.DateCalculator = Constructor;
+    }
 })();
