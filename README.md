@@ -21,5 +21,5 @@ var dc = new DateCalculator(new Date(2018,7,9));
 dc.sub(new Date(2018,7,3)); // -> Object {days: 6, months: 0, weeks: 1, years: 0}
 ```
 
-###Copyright
+### Copyright
 Copyright (c) 2018 Hyunjin Lee. See [LICENSE](LICENSE) for further details.
