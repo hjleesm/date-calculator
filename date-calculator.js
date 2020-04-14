@@ -25,7 +25,7 @@
     };
 
     var subWeeks = function(operand) {
-        var date1 = subDays(date, parseInt(date.getDay()));
+        var date1 = subDays(date, parseInt(date.getDay())),
             date2 = subDays(operand, parseInt(operand.getDay()));
 
         return subDays(date1, date2) / 7;
