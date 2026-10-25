@@ -1,6 +1,6 @@
 {
   "name": "date-calculator",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "keywords": [
     "DateCalculator",
     "Date Calculator",
@@ -11,18 +11,22 @@
   ],
   "description": "calculate Date objects.",
   "main": "date-calculator.js",
+  "files": [
+    "date-calculator.js",
+    "dist/date-calculator.js"
+  ],
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node scripts/build.js",
+    "prepack": "npm run build",
+    "test": "npm run build && node test/node.js"
   },
   "author": "Hyunjin Lee",
   "license": "MIT",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-qunit": "^2.0.1",
-    "gulp-uglify": "^3.0.1"
+    "uglify-js": "3.19.3"
   },
   "repository": {
     "type": "git",

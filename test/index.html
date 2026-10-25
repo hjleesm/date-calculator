@@ -22,7 +22,7 @@
                 }
             },
             {
-                op1: [2018, 7, 16], // 2018/8/9
+                op1: [2018, 7, 16], // 2018/8/16
                 op2: [2018, 7, 2],  // 2018/8/2
                 expect: {
                     days: 14,
@@ -32,11 +32,11 @@
                 }
             },
             {
-                op1: [2018, 7, 16],  // 2018/8/9
+                op1: [2018, 7, 16],  // 2018/8/16
                 op2: [2018, 6, 26],  // 2018/7/26
                 expect: {
-                    days: 14,
-                    weeks: 2,
+                    days: 21,
+                    weeks: 3,
                     months: 1,
                     years: 0                    
                 }
@@ -69,7 +69,7 @@
                     dc = new DateCalculator(new Date(testSet.op1[0], testSet.op1[1], testSet.op1[2])),
                     ret = dc.sub(new Date(testSet.op2[0], testSet.op2[1], testSet.op2[2]));
 
-                assert.equal(JSON.stringify(testSet.expect), JSON.stringify(testSet.expect), 
+                assert.deepEqual(ret, testSet.expect,
                     testSet.op1[0] + '/' + (testSet.op1[1] + 1) + '/' + testSet.op1[2] + ' - ' + testSet.op2[0] + '/' + (testSet.op2[1] + 1) + '/' + testSet.op2[2] + ' = ' + JSON.stringify(testSet.expect));
             }
         });
