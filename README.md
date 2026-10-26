@@ -2,7 +2,7 @@
 
 DateCalculator performs calendar arithmetic with JavaScript `Date` objects. It uses the runtime's local time zone and focuses on dates, day differences, and business days.
 
-> This README describes the 2.0.0 code in this repository. Check the [published npm version](https://www.npmjs.com/package/date-calculator) before using the 2.0.0 examples with `npm install`; publishing to npm is separate from pushing this repository.
+> This README describes the 2.x API. Check the [published npm version](https://www.npmjs.com/package/date-calculator) before using these examples with `npm install`; publishing to npm is separate from pushing this repository.
 
 ## Install and import
 
@@ -124,4 +124,4 @@ npm test
 
 ## License
 
-MIT. Copyright (c) 2018-2020 Hyunjin Lee. See [LICENSE](LICENSE).
+MIT. Copyright (c) 2018-2026 HyunJin Lee. See [LICENSE](LICENSE).
